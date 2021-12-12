@@ -5,17 +5,24 @@ header
 		a(href="/") Home
 		a(href="/") about
 	.right
-		Button.button(text="Contact Us" @click-event="toggleMenu(false)")
-		Burger.burger(@click-event="toggleMenu" :active-state="plegableMenu")
+		Button.button(@click-event="toggleMenu(false)") Contact Us
+		Burger.burger(
+			@click-event="toggleMenu"
+			:active-state="plegableMenu"
+			:class="{'absolute': plegableMenu}")
 	.plegable-menu--background(v-if="plegableMenu" @click="toggleMenu(false)")
-		.plegable-menu(@clcik.stop)
-			a(href="/") Home
-			a(href="/") about
-			Button.button(text="Contact Us" @click-event="toggleMenu(false)")
+	transition(name="menu"): .plegable-menu(@click.stop="" v-if="plegableMenu")
+		a(href="/") Home
+		a(href="/") about
+		Button.button Contact Us
 </template>
 
 <style lang="stylus" scoped>
 @import '../_tokens.styl'
+.menu-enter-active
+	animation menu-enter 0.5s
+.menu-leave-active
+	animation menu-enter 0.5s reverse
 header
 	height 100px
 	display flex
@@ -34,6 +41,10 @@ header
 		& > .burger
 			position relative
 			z-index 100
+			&.absolute
+				position fixed
+				right 30px
+				top 30px
 	.plegable-menu
 		background-color secondaryDesaturated
 		position fixed
@@ -57,6 +68,28 @@ header
 			bottom 0
 			left 0
 			right 0
+@media screen and (min-width 768px)
+	header
+		.left
+				& > a
+					display inline
+		.right
+			& > .burger
+				display none
+			& > .button
+				display flex
+		.plegable-menu
+			display none
+			&--background
+				display none
+@keyframes menu-enter {
+	0% {
+		transform translateX(300px)
+	}
+	100% {
+		transform translateX(0px)
+	}
+}
 </style>
 
 <script lang="ts">
@@ -66,7 +99,7 @@ import Burger from './atoms/Burger.vue';
 export default defineComponent({
 	data() {
 		return {
-			plegableMenu: true,
+			plegableMenu: false,
 		};
 	},
 	components: {

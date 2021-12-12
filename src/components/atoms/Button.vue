@@ -2,8 +2,8 @@
 button(
 	@click.prevent="action()"
 	:class="{ secondary: kind == 'secondary', fullWidth: fullWidth}"
-	:disabled="disabled"
-) {{text}}
+	:disabled="disabled")
+	slot
 </template>
 
 <style lang="stylus" scoped>
@@ -51,10 +51,6 @@ import { defineComponent, PropType } from 'vue';
 export default defineComponent({
 	emits: ['click-event'],
 	props: {
-		text: {
-			type: String,
-			required: true,
-		},
 		kind: {
 			type: String as PropType<'primary' | 'secondary'>,
 			default: 'primary',
