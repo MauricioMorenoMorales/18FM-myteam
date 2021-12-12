@@ -1,17 +1,57 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<template lang="pug">
+div
+  .nav
+    router-link(to="/") Home
+    router-link(to="/about") About
+  router-view
+  Button(
+    text="this is the text"
+    @click-event="helloWorld"
+    kind="secondary")
+  h1 Quick Waltz
+  h2 Grabs quick waltz
+  h3 Jived fox nymph grabs quick waltz
+  h4 Jived fox nymph grabs quick waltz
+  p |Sed egestas, ante et vulputate volutpat, eros pede semper est,
+    |vitae luctus metus libero eu augue. Morbi purus libero,
+    |faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.
+    |Praesent elementum hendrerit tortor. Sed semper lorem at felis.
+    |Vestibulum volutpat, lacus a ultrices sagittis, mi neque. Orbi purus libero,
+    |faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.Sed egestas,
+    |ante et vulputate volutpat, eros pede sempe.
+  small Sed egestas, ante et vulputate volutpat, eros pede semper est,
+    |vitae luctus metus libero eu augue. Morbi purus libero,
+    |faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.
+    |Praesent elementum hendrerit tortor. Sed semper lorem at felis.
+    |Vestibulum volutpat, lacus a ultrices sagittis, mi neque. Orbi purus libero,
+    |faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.Sed egestas,
+    |ante et vulputate volutpat, eros pede sempe.
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Button from './components/atoms/Button.vue';
+
+export default defineComponent({
+	components: {
+		Button,
+	},
+	methods: {
+		helloWorld(message: string): void {
+			alert(message);
+		},
+	},
+});
+</script>
+
 <style lang="stylus">
+@import './_tokens.styl'
 #app
+  background-color secondaryMoreSaturated
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   text-align center
-  color #2c3e50
+  color textPrimary
   margin-top 60px
 </style>
