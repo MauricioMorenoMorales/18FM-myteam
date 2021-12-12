@@ -1,8 +1,6 @@
 <template lang="pug">
 div
-  .nav
-    router-link(to="/") Home
-    router-link(to="/about") About
+  Header
   router-view
   Button(
     text="this is the text"
@@ -31,10 +29,12 @@ div
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Button from './components/atoms/Button.vue';
+import Header from './components/Header.vue';
 
 export default defineComponent({
 	components: {
 		Button,
+		Header,
 	},
 	methods: {
 		helloWorld(message: string): void {
@@ -51,7 +51,5 @@ export default defineComponent({
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  text-align center
   color textPrimary
-  margin-top 60px
 </style>
