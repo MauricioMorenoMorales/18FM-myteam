@@ -1,7 +1,7 @@
 <template lang="pug">
 button(
 	@click.prevent="action()"
-	:class="{ secondary: kind == 'secondary', fullWidth: fullWidth}"
+	:class="[kind, {'full-width': fullWidth}]"
 	:disabled="disabled")
 	slot
 </template>
@@ -21,7 +21,7 @@ button
 	color basePrimary
 	transition 0.1s
 	cursor pointer
-	&.fullWidth
+	&.full-width
 		width 100%
 	&:hover
 		background-color basePrimary
@@ -30,8 +30,20 @@ button
 		border 2px solid basePrimaryTransparent
 		color basePrimaryTransparent
 		cursor default
+		pointer-events: none
+	&.primary-inverted
+		color secondaryMoreSaturated
+		border 2px solid secondaryMoreSaturated
+		background-color transparent
 		&:hover
-			background-color transparent
+			color basePrimary
+			background-color secondaryMoreSaturated
+			border 2px solid secondaryMoreSaturated
+		&:disabled
+			cursor default
+			color primaryTransparent
+			border 2px solid primaryTransparent
+			pointer-events none
 	&.secondary
 		background-color basePrimary
 		color primary
@@ -43,6 +55,7 @@ button
 			color primaryTransparent
 			border none
 			cursor default
+			pointer-events none
 </style>
 
 <script lang="ts">
@@ -52,7 +65,7 @@ export default defineComponent({
 	emits: ['click-event'],
 	props: {
 		kind: {
-			type: String as PropType<'primary' | 'secondary'>,
+			type: String as PropType<'primary' | 'primary-inverted' | 'secondary'>,
 			default: 'primary',
 		},
 		fullWidth: {
@@ -68,6 +81,9 @@ export default defineComponent({
 		action(): void {
 			this.$emit('click-event');
 		},
+	},
+	mounted() {
+		console.log(this.kind);
 	},
 });
 </script>
