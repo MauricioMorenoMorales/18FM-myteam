@@ -24,17 +24,20 @@ div
     |Vestibulum volutpat, lacus a ultrices sagittis, mi neque. Orbi purus libero,
     |faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.Sed egestas,
     |ante et vulputate volutpat, eros pede sempe.
+  Footer
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Button from './components/atoms/Button.vue';
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 
 export default defineComponent({
 	components: {
 		Button,
 		Header,
+		Footer,
 	},
 	methods: {
 		helloWorld(message: string): void {
@@ -47,7 +50,7 @@ export default defineComponent({
 <style lang="stylus">
 @import './_tokens.styl'
 #app
-  background-color secondaryMoreSaturated
+  background-color secondaryDesaturated
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
