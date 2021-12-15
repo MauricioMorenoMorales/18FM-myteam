@@ -7,13 +7,15 @@
 				|Using our network of passionate professionals we drive innovation
 				|and deliver incredible outcomes. Talented, diverse teams shape the
 				|best products and experiences. We’ll bring those teams to you.
-	article.director-cards
-		director-card
-		director-card
-		director-card
-		director-card
-		director-card
-		director-card
+	.director
+		h3 Meet the directors
+		.director__cards
+			director-card
+			director-card
+			director-card
+			director-card
+			director-card
+			director-card
 	get-started-footer
 </template>
 
@@ -31,17 +33,35 @@
 		background-position-x calc(100% + 100px)
 	& > h2
 		margin-bottom 30px
-.director-cards
-	padding 30px 20px
-	max-width 320px
-	margin 0 auto
-	& > *
-		margin-bottom 30px
+.director
+	text-align center
+	padding 130px 0
+	background-color secondarySaturated
+	background-image url('~@assets/bg-pattern-home-4-about-3.svg'), url('~@assets/bg-pattern-home-5.svg')
+	background-repeat no-repeat, no-repeat
+	background-position top left, bottom right
+	&__cards
+		padding 30px 20px
+		max-width 320px
+		margin 0 auto
+		& > *
+			margin-bottom 30px
 @media screen and (min-width 768px)
 	.intro
 		max-width 600px
 		&--container
 			background-position-y bottom
+	.director
+		& > h3
+			margin-bottom 40px
+		&__cards
+			display grid
+			max-width 600px
+			grid-template-columns 1fr 1fr
+			padding 30px 0
+			gap 30px
+			& > *
+				margin-bottom 10px
 @media screen and (min-width 1100px)
 	.intro
 		max-width 1100px
@@ -62,6 +82,11 @@
 				position absolute
 				top 0
 				left 0
+	.director
+		&__cards
+			grid-template-columns 1fr 1fr 1fr
+			gap 30px
+			max-width 1100px
 </style>
 
 <script lang="ts">

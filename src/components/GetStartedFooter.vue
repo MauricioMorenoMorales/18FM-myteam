@@ -35,6 +35,8 @@
 			max-width 1100px
 			margin 0 auto
 			justify-content space-between
+			h3
+				padding-top 20px
 </style>
 
 <script lang="ts">

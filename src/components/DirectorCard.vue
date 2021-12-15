@@ -26,17 +26,15 @@ div.director-card
 
 <style lang="stylus" scoped>
 @import '~@/_tokens.styl'
-.content-enter-active
-	animation fade 1s
-.content-leave-active
-	animation fade 1s
 .director-card
 	text-align center
 .content
-	background-color secondarySaturated
+	background-color secondaryMoreSaturated
 	text-align center
 	padding 40px 40px 60px 40px
+	height 100%
 	max-height 240px
+	width 100%
 	img
 		height 96px
 		width 96px
@@ -59,20 +57,12 @@ button
 	margin-top -28px
 	transform rotate(45deg)
 	cursor pointer
-	transition 1s
+	transition 0.2s
 	&:hover
 		background-color lighten(accent, 30%)
 	&.is-opened
 		background-color secondaryMoreDesaturated
 		transform rotate(0)
-@keyframes fade {
-	0% {
-		opacity 1
-	}
-	0% {
-		opacity 0
-	}
-}
 </style>
 
 <script lang="ts">
@@ -82,7 +72,7 @@ import Icon from '@atoms/Icon.vue';
 export default defineComponent({
 	data() {
 		return {
-			isOpened: true,
+			isOpened: false,
 			colorSystem,
 		};
 	},
