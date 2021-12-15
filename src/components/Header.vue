@@ -2,8 +2,8 @@
 header
 	.left
 		img(src="../assets/logo.svg")
-		a(href="/") Home
-		a(href="/") about
+		router-link(to="/") Home
+		router-link(to="/about") about
 	.right
 		Button.button(@click-event="toggleMenu(false)") Contact Us
 		Burger.burger(

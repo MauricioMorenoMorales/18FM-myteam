@@ -78,7 +78,7 @@
 		max-width 200px
 		padding-top 30px
 		position relative
-		z-index 10
+		z-index 1
 		&::after
 			content ""
 			height 4px
