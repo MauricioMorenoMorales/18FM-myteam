@@ -1,12 +1,12 @@
 <template lang="pug">
 div.director-card
 	.content(v-if="!isOpened")
-		img(src="~@assets/avatar-nikita.jpg")
-		p Nikita Marks
-		cite Founder &amp; CEO
+		img(:src="getLink()")
+		p {{name}}
+		cite {{jobTitle}}
 	.content(v-else)
-		p Nikita Marks
-		small “It always amazes me how much talent there is in every corner of the globe.”
+		p {{name}}
+		small {{text}}
 		.social
 			Icon(
 				icon-name="twitter"
@@ -76,12 +76,34 @@ export default defineComponent({
 			colorSystem,
 		};
 	},
+	props: {
+		avatarName: {
+			type: String,
+			default: 'nikita',
+		},
+		name: {
+			type: String,
+			default: 'Nikita Marks',
+		},
+		jobTitle: {
+			type: String,
+			default: 'Founder & CEO',
+		},
+		text: {
+			type: String,
+			default:
+				'“It always amazes me how much talent there is in every corner of the globe.”',
+		},
+	},
 	components: {
 		Icon,
 	},
 	methods: {
 		toggle() {
 			this.isOpened = !this.isOpened;
+		},
+		getLink() {
+			return require(`../assets/avatar-${this.avatarName}.jpg`);
 		},
 	},
 });

@@ -10,12 +10,36 @@
 	.director
 		h3 Meet the directors
 		.director__cards
-			director-card
-			director-card
-			director-card
-			director-card
-			director-card
-			director-card
+			director-card(
+				avatar-name="nikita"
+				name="Nikita Marks"
+				job-title="Founder & CEO"
+				text="“It always amazes me how much talent there is in every corner of the globe.”")
+			director-card(
+				avatar-name="christian"
+				name="Christian Duncan"
+				job-title="Co-founder & COO"
+				text="“Distributed teams required unique processes. You need to approach work in a new way.”")
+			director-card(
+				avatar-name="cruz"
+				name="Cruz Hamer"
+				job-title="Co-founder & CTO"
+				text="“Technology is at the forefront of enabling distributed teams. That's where we come in.”")
+			director-card(
+				avatar-name="drake"
+				name="Drake Heaton"
+				job-title="Business Development Lead"
+				text="“Hiring similar people from similar backgrounds is a surefire way to stunt innovation.”")
+			director-card(
+				avatar-name="griffin"
+				name="Griffin Wise"
+				job-title="Lead Marketing"
+				text="“Unique perspectives shape unique products, which is what you need to survive these days.”")
+			director-card(
+				avatar-name="aden"
+				name="Aden Allan"
+				job-title="Head of Talent"
+				text="“Empowered teams create truly amazing products. Set the north star and let them follow it.”")
 	get-started-footer
 </template>
 
