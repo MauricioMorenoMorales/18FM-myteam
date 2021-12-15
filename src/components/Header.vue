@@ -18,7 +18,7 @@ header
 </template>
 
 <style lang="stylus" scoped>
-@import '../_tokens.styl'
+@import '~@/_tokens.styl'
 .menu-enter-active
 	animation menu-enter 0.5s
 .menu-leave-active
@@ -82,6 +82,11 @@ header
 			display none
 			&--background
 				display none
+@media screen and (min-width: 1100px)
+	header
+		max-width 1100px
+		margin 0 auto
+		padding 30px 0px
 @keyframes menu-enter {
 	0% {
 		transform translateX(300px)

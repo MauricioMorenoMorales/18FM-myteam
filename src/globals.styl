@@ -1,4 +1,4 @@
-@import './_tokens.styl'
+@import '~@/_tokens.styl'
 *
 	box-sizing border-box
 	margin 0
@@ -8,8 +8,8 @@ button
 	font-family fontFamilyPrimary
 
 h1
-	font-size 10rem
-	line-height 10rem
+	font-size 4rem
+	line-height 4rem
 
 h2
 	font-size 6.4rem
@@ -42,7 +42,18 @@ a
 	&:hover
 		text-decoration underline
 
+b
+	color accent
+
+@media screen and (min-width: 768px)
+	h1
+		font-size 6.4rem
+		line-height 5.6rem
+
 @media screen and (min-width: 1100px)
+	h1
+		font-size 10rem
+		line-height 10rem
 	h3
 		font-size 4.8rem
 		line-height 4.8rem

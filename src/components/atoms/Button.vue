@@ -7,7 +7,7 @@ button(
 </template>
 
 <style lang="stylus" scoped>
-@import '../../_tokens.styl'
+@import '~@/_tokens.styl'
 button
 	height 48px
 	border-radius 48px

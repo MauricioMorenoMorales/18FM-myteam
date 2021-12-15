@@ -6,7 +6,7 @@
 </template>
 
 <style lang="stylus" scoped>
-@import '../_tokens.styl'
+@import '~@/_tokens.styl'
 .get-started-footer
 	background-image url('../assets/bg-pattern-home-6-about-5.svg')
 	height 300px

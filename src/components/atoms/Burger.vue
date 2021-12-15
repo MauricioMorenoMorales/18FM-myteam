@@ -35,7 +35,7 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
-@import '../../_tokens.styl'
+@import '~@/_tokens.styl'
 .hamburger
     padding 15px 15px
     display inline-block

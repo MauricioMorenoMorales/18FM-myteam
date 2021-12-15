@@ -27,7 +27,7 @@
 </template>
 
 <style lang="stylus" scoped>
-@import '../_tokens.styl'
+@import '~@/_tokens.styl'
 footer
 	background-color secondaryMoreSaturated
 	text-align center
@@ -80,8 +80,8 @@ footer
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Icon from './atoms/Icon.vue';
-import { colorSystem } from '../tokens.styles';
+import Icon from '@atoms/Icon.vue';
+import { colorSystem } from '@/tokens.styles';
 
 export default defineComponent({
 	components: {
