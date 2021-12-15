@@ -25,8 +25,31 @@
 					.features__points__item__text
 						p <b>Experienced Individuals</b>
 						small Our network is made up of highly experienced professionals who are passionate about what they do.
-	img(src="../assets/logo.png")
-	HelloWorld
+	.success--container
+		.success
+			h3 Delivering real results for top companies. Some of our <mark>success stories.</mark>
+			.success__points
+				.success__points__item
+					small
+						|“The team perfectly fit the specialized skill set required.
+						|They focused on the most essential features helping us launch the platform eight months faster than planned.”
+					p Kady Baker
+					cite Product Manager at Bookmark
+					img(src="~@assets/avatar-kady.jpg")
+				.success__points__item
+					small
+						|“We needed to automate our entire onboarding process. The team came in and
+						|built out the whole journey. Since going live, user retention has gone through the roof!”
+					p Aiysha Reese
+					cite Founder of Manage
+					img(src="~@assets/avatar-aiysha.jpg")
+				.success__points__item
+					small
+						|“Amazing. Our team helped us build an app that delivered a new experience
+						|for hiring a physio. The launch was an instant success with 100k downloads in the first month.”
+					p Arthur Clarke
+					cite Co-founder of MyPhysio
+					img(src="~@assets/avatar-arthur.jpg")
 	get-started-footer
 </template>
 
@@ -55,6 +78,7 @@
 		max-width 200px
 		padding-top 30px
 		position relative
+		z-index 10
 		&::after
 			content ""
 			height 4px
@@ -67,7 +91,33 @@
 		text-align center
 		&__item
 			margin-top 30px
-
+.success
+	max-width 320px
+	text-align center
+	margin 0 auto
+	&--container
+		padding 100px 20px
+		background-image url('~@assets/bg-pattern-home-4-about-3.svg'), url('~@assets/bg-pattern-home-5.svg')
+		background-repeat no-repeat, no-repeat
+		background-position top left, bottom right
+	& > h3
+		margin-bottom 50px
+	&__points
+		&__item
+			margin-bottom 30px
+			background-image url('~@assets/icon-quotes.svg')
+			background-position top center
+			background-repeat no-repeat
+			padding-top 20px
+			small, cite
+				margin-bottom 20px
+			p
+				color secondaryMoreDesaturated
+			img
+				height 62px
+				width auto
+				border-radius 50%
+				border 2px solid secondaryMostDesaturated
 
 @media screen and (min-width 768px)
 	.hero
@@ -84,6 +134,8 @@
 			&__item
 				display grid
 				grid-template-columns 80px 1fr
+	.success
+		max-width 600px
 @media screen and (min-width 1100px)
 	.hero
 		display grid
@@ -121,6 +173,14 @@
 		padding 100px 0
 		&--container
 			background-position calc(100% + 100px) bottom
+	.success
+		max-width 1100px
+		& > h3
+			max-width 930px
+			margin 0 auto 50px auto
+		&__points
+			display grid
+			grid-template-columns 1fr 1fr 1fr
 </style>
 
 <script lang="ts">

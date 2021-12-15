@@ -23,6 +23,7 @@
 		h3
 			color secondaryMoreSaturated
 			margin-bottom 30px
+			text-align center
 @media screen and (min-width 768px)
 	.get-started-footer
 		height 200px

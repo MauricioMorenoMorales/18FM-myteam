@@ -40,7 +40,7 @@ header
 			display none
 		& > .burger
 			position relative
-			z-index 100
+			z-index 110
 			&.absolute
 				position fixed
 				right 30px
@@ -48,6 +48,7 @@ header
 	.plegable-menu
 		background-color secondaryDesaturated
 		position fixed
+		z-index 100
 		right 0
 		bottom 0
 		height 100vh
