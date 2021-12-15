@@ -1,12 +1,19 @@
 <template lang="pug">
 .about
 	.intro--container
-		.intro
+		article.intro
 			h2 About
 			p We help companies build dynamic teams made up of top global talent.
 				|Using our network of passionate professionals we drive innovation
 				|and deliver incredible outcomes. Talented, diverse teams shape the
 				|best products and experiences. We’ll bring those teams to you.
+	article.director-cards
+		director-card
+		director-card
+		director-card
+		director-card
+		director-card
+		director-card
 	get-started-footer
 </template>
 
@@ -23,6 +30,12 @@
 		background-position-y calc(100% + 100px)
 		background-position-x calc(100% + 100px)
 	& > h2
+		margin-bottom 30px
+.director-cards
+	padding 30px 20px
+	max-width 320px
+	margin 0 auto
+	& > *
 		margin-bottom 30px
 @media screen and (min-width 768px)
 	.intro
@@ -54,9 +67,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import GetStartedFooter from '@components/GetStartedFooter.vue';
+import DirectorCard from '@components/DirectorCard.vue';
 export default defineComponent({
 	components: {
 		GetStartedFooter,
+		DirectorCard,
 	},
 });
 </script>
