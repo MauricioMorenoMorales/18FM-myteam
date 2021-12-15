@@ -40,6 +40,14 @@
 				name="Aden Allan"
 				job-title="Head of Talent"
 				text="“Empowered teams create truly amazing products. Set the north star and let them follow it.”")
+	.clients
+		h3 Some of our clients
+		.clients__logos
+			img(src="~@assets/logo-the-verge.png")
+			img(src="~@assets/logo-jakarta-post.png")
+			img(src="~@assets/logo-the-guardian.png")
+			img(src="~@assets/logo-tech-radar.png")
+			img(src="~@assets/logo-gadgets-now.png")
 	get-started-footer
 </template>
 
@@ -70,6 +78,22 @@
 		margin 0 auto
 		& > *
 			margin-bottom 30px
+.clients
+	text-align center
+	padding 100px 20px
+	background-image url('~@assets/bg-pattern-home-3.svg')
+	background-position top left
+	background-repeat no-repeat
+	background-color secondaryMoreSaturated
+	& > h3
+		margin-bottom 50px
+	&__logos
+		max-width 170px
+		margin 0 auto
+		& > *
+			margin-bottom 50px
+			max-height 45px
+			width auto
 @media screen and (min-width 768px)
 	.intro
 		max-width 600px
@@ -86,6 +110,16 @@
 			gap 30px
 			& > *
 				margin-bottom 10px
+	.clients
+		&__logos
+			display flex
+			max-width 600px
+			justify-content center
+			gap 30px
+			& > *
+				max-width 100px
+				height auto
+				max-height 17px
 @media screen and (min-width 1100px)
 	.intro
 		max-width 1100px
@@ -111,6 +145,14 @@
 			grid-template-columns 1fr 1fr 1fr
 			gap 30px
 			max-width 1100px
+	.clients
+		&__logos
+			max-width 1100px
+			justify-content space-between
+			gap 0
+			& > *
+				max-width 180px
+				max-height 28px
 </style>
 
 <script lang="ts">
