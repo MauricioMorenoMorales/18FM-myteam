@@ -20,6 +20,7 @@ input, textarea
 	font-size 1.5rem
 	outline none
 	padding-left 20px
+	border-radius 0
 	&.error
 		border-bottom 1px solid red
 small
