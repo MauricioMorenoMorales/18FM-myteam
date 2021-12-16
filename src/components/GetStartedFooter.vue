@@ -2,7 +2,9 @@
 .get-started-footer
 	.container
 		h3 Ready to get started?
-		Button(kind="primary-inverted") Contact Us
+		Button(
+			kind="primary-inverted"
+			@click.prevent="goToContactPage()") Contact Us
 </template>
 
 <style lang="stylus" scoped>
@@ -45,6 +47,11 @@ import Button from './atoms/Button.vue';
 export default defineComponent({
 	components: {
 		Button,
+	},
+	methods: {
+		goToContactPage() {
+			this.$router.push('/contact');
+		},
 	},
 });
 </script>

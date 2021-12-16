@@ -4,6 +4,7 @@ const vueSrc = './src';
 const AtomsDirectory = './src/components/atoms';
 const ComponentsDirectory = './src/components';
 const AssetsDirectory = './src/assets';
+const HelpersDirectory = './src/helpers';
 
 module.exports = {
 	runtimeCompiler: true,
@@ -17,6 +18,7 @@ module.exports = {
 				'@atoms': path.resolve(__dirname, AtomsDirectory),
 				'@components': path.resolve(__dirname, ComponentsDirectory),
 				'@assets': path.resolve(__dirname, AssetsDirectory),
+				'@helpers': path.resolve(__dirname, HelpersDirectory),
 			},
 			extensions: ['.js', '.vue', '.json', '.styl'],
 		},

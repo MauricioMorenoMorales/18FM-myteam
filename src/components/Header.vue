@@ -1,11 +1,11 @@
 <template lang="pug">
 header
 	.left
-		img(src="../assets/logo.svg")
+		img(src="../assets/logo.svg" @click.prevent="goToHomePage()")
 		router-link(to="/") Home
 		router-link(to="/about") about
 	.right
-		Button.button(@click-event="toggleMenu(false)") Contact Us
+		Button.button(@click-event="goToContactPage()") Contact Us
 		Burger.burger(
 			@click-event="toggleMenu"
 			:active-state="plegableMenu"
@@ -14,7 +14,7 @@ header
 	transition(name="menu"): .plegable-menu(@click.stop="" v-if="plegableMenu")
 		a(href="/") Home
 		a(href="/") about
-		Button.button Contact Us
+		Button.button(@click.native="goToContactPage()") Contact Us
 </template>
 
 <style lang="stylus" scoped>
@@ -35,6 +35,8 @@ header
 		align-items center
 		& > a
 			display none
+		img
+			cursor pointer
 	.right
 		& > .button
 			display none
@@ -115,6 +117,14 @@ export default defineComponent({
 	methods: {
 		toggleMenu(value: boolean): void {
 			this.plegableMenu = value;
+		},
+		goToContactPage(): void {
+			this.toggleMenu(false);
+			this.$router.push('/contact');
+		},
+		goToHomePage(): void {
+			this.toggleMenu(false);
+			this.$router.push('/');
 		},
 	},
 });
