@@ -1,21 +1,22 @@
 <template lang="pug">
 div.director-card
-	.content(v-if="!isOpened")
-		img(:src="getLink()")
-		p {{name}}
-		cite {{jobTitle}}
-	.content(v-else)
-		p {{name}}
-		small {{text}}
-		.social
-			Icon(
-				icon-name="twitter"
-				:iconColor="colorSystem.basePrimary"
-				:hoverColor="colorSystem.accent")
-			Icon(
-				icon-name="linkedin"
-				:iconColor="colorSystem.basePrimary"
-				:hoverColor="colorSystem.accent")
+	transition-group
+		.content(v-if="!isOpened")
+			img(:src="getLink()")
+			p {{name}}
+			cite {{jobTitle}}
+		.content(v-else)
+			p {{name}}
+			small {{text}}
+			.social
+				Icon(
+					icon-name="twitter"
+					:iconColor="colorSystem.basePrimary"
+					:hoverColor="colorSystem.accent")
+				Icon(
+					icon-name="linkedin"
+					:iconColor="colorSystem.basePrimary"
+					:hoverColor="colorSystem.accent")
 	button(:class="{'is-opened': isOpened}" @click.prevent="toggle")
 		Icon(
 			icon-name="close"
@@ -26,8 +27,19 @@ div.director-card
 
 <style lang="stylus" scoped>
 @import '~@/_tokens.styl'
+.v-enter-active
+	animation fadeout 0.5s
+	position absolute
+	left 0
+	right 0
+.v-leave-active
+	animation fadeout 0.5s reverse
+	position absolute
+	left 0
+	right 0
 .director-card
 	text-align center
+	position relative
 .content
 	background-color secondaryMoreSaturated
 	text-align center
@@ -54,15 +66,28 @@ button
 	border none
 	border-radius 50%
 	background-color accent
-	margin-top -28px
 	transform rotate(45deg)
 	cursor pointer
-	transition 0.2s
+	transition 0.5s
+	position absolute
+	bottom -25px
+	left 0
+	right 0
+	margin 0 auto
 	&:hover
 		background-color lighten(accent, 30%)
 	&.is-opened
 		background-color secondaryMoreDesaturated
 		transform rotate(0)
+
+@keyframes fadeout {
+	0% {
+		opacity 0
+	}
+	100% {
+		opacity 1
+	}
+}
 </style>
 
 <script lang="ts">

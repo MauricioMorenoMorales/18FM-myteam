@@ -1,10 +1,10 @@
 <template lang="pug">
 .container
 	footer
-		img.logo(src="../assets/logo.svg")
+		img.logo(src="../assets/logo.svg" @click="redirectToHome()")
 		.links
-			a(href="/") home
-			a(href="/") about
+			router-link(to="/") home
+			router-link(to="/about") about
 		.address
 			small 087 Hillcrest Lane
 			small Irvine CA
@@ -32,6 +32,8 @@ footer
 	background-color secondaryMoreSaturated
 	text-align center
 	padding 60px 0
+	img
+		cursor pointer
 	& > *
 		margin-bottom 30px
 	.social, .links
@@ -91,6 +93,11 @@ export default defineComponent({
 		return {
 			colorSystem,
 		};
+	},
+	methods: {
+		redirectToHome() {
+			this.$router.push('/');
+		},
 	},
 });
 </script>

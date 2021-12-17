@@ -58,7 +58,7 @@
 		background-position calc(100% + 100px) 100%, -100px 0
 	.container
 		max-width 600px
-@media screen and (min-width 768px)
+@media screen and (min-width 1300px)
 	.contact
 		background-position calc(100% + 100px) 100%, -100px 130px
 	.container
