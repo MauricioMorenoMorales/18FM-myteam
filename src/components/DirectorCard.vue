@@ -2,7 +2,7 @@
 div.director-card
 	transition-group
 		.content(v-if="!isOpened")
-			img(:src="getLink()")
+			img(:src="getLink()" :alt="name")
 			p {{name}}
 			cite {{jobTitle}}
 		.content(v-else)

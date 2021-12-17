@@ -43,11 +43,11 @@
 	.clients
 		h3 Some of our clients
 		.clients__logos
-			img(src="~@assets/logo-the-verge.png")
-			img(src="~@assets/logo-jakarta-post.png")
-			img(src="~@assets/logo-the-guardian.png")
-			img(src="~@assets/logo-tech-radar.png")
-			img(src="~@assets/logo-gadgets-now.png")
+			img(src="~@assets/logo-the-verge.png" alt="the verge logo")
+			img(src="~@assets/logo-jakarta-post.png" alt="jakarta post logo")
+			img(src="~@assets/logo-the-guardian.png" alt="the guardian logo")
+			img(src="~@assets/logo-tech-radar.png" alt="tech radar logo")
+			img(src="~@assets/logo-gadgets-now.png" alt="gadgets now logo")
 	get-started-footer
 </template>
 

@@ -11,17 +11,17 @@
 			h3.features__title Build &amp; manage distributed teams like no one else.
 			.features__points
 				.features__points__item
-					img(src="~@assets/icon-person.svg")
+					img(src="~@assets/icon-person.svg" alt="person icon")
 					.features__points__item__text
 						p <b>Experienced Individuals</b>
 						small Our network is made up of highly experienced professionals who are passionate about what they do.
 				.features__points__item
-					img(src="~@assets/icon-cog.svg")
+					img(src="~@assets/icon-cog.svg" alt="cog icon")
 					.features__points__item__text
 						p <b>Easy to Implement</b>
 						small Our processes have been refined over years of implementation meaning our teams always deliver.
 				.features__points__item
-					img(src="~@assets/icon-chart.svg")
+					img(src="~@assets/icon-chart.svg" alt="chart icon")
 					.features__points__item__text
 						p <b>Experienced Individuals</b>
 						small Our network is made up of highly experienced professionals who are passionate about what they do.
@@ -35,21 +35,21 @@
 						|They focused on the most essential features helping us launch the platform eight months faster than planned.”
 					p Kady Baker
 					cite Product Manager at Bookmark
-					img(src="~@assets/avatar-kady.jpg")
+					img(src="~@assets/avatar-kady.jpg" alt="kady")
 				.success__points__item
 					small
 						|“We needed to automate our entire onboarding process. The team came in and
 						|built out the whole journey. Since going live, user retention has gone through the roof!”
 					p Aiysha Reese
 					cite Founder of Manage
-					img(src="~@assets/avatar-aiysha.jpg")
+					img(src="~@assets/avatar-aiysha.jpg" alt="aiysha")
 				.success__points__item
 					small
 						|“Amazing. Our team helped us build an app that delivered a new experience
 						|for hiring a physio. The launch was an instant success with 100k downloads in the first month.”
 					p Arthur Clarke
 					cite Co-founder of MyPhysio
-					img(src="~@assets/avatar-arthur.jpg")
+					img(src="~@assets/avatar-arthur.jpg" alt="arthur")
 	get-started-footer
 </template>
 

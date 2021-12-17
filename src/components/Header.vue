@@ -1,7 +1,7 @@
 <template lang="pug">
 header
 	.left
-		img(src="../assets/logo.svg" @click.prevent="goToHomePage()")
+		img(src="../assets/logo.svg" @click.prevent="goToHomePage()" alt="myteam logo")
 		router-link(to="/") Home
 		router-link(to="/about") about
 	.right

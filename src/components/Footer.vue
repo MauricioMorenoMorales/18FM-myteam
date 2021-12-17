@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
 	footer
-		img.logo(src="../assets/logo.svg" @click="redirectToHome()")
+		img.logo(src="../assets/logo.svg" @click="redirectToHome()" alt="myteam logo")
 		.links
 			router-link(to="/") home
 			router-link(to="/about") about

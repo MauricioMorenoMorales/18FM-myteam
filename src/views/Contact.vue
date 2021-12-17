@@ -6,13 +6,13 @@
 			h3 <b>Ask us about</b>
 			.description__points
 				.description__points__item
-					img(src="~@assets/icon-person.svg")
+					img(src="~@assets/icon-person.svg" alt="person icon")
 					p The quality of our talent network
 				.description__points__item
-					img(src="~@assets/icon-cog.svg")
+					img(src="~@assets/icon-cog.svg" alt="cog icon")
 					p Usage &amp; implementation of our software
 				.description__points__item
-					img(src="~@assets/icon-chart.svg")
+					img(src="~@assets/icon-chart.svg" alt="chart icon")
 					p How we help drive innovation
 		.form
 			Input(@change-value="inputFunction" name="name" placeholder="Name")
