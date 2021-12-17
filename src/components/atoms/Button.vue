@@ -82,8 +82,5 @@ export default defineComponent({
 			this.$emit('click-event');
 		},
 	},
-	mounted() {
-		console.log(this.kind);
-	},
 });
 </script>

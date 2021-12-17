@@ -1,39 +1,44 @@
 <template lang="pug">
 .contact
-	.description
-		h2 Contact
-		h3 <b>Ask us about</b>
-		.description__points
-			.description__points__item
-				img(src="~@assets/icon-person.svg")
-				p The quality of our talent network
-			.description__points__item
-				img(src="~@assets/icon-cog.svg")
-				p Usage &amp; implementation of our software
-			.description__points__item
-				img(src="~@assets/icon-chart.svg")
-				p How we help drive innovation
-	.form
-		Input(@change-value="inputFunction" name="name" placeholder="Name")
-		Input(
-			@change-value="inputFunction"
-			name="email"
-			placeholder="Email Address"
-			email-validation
-			error-message="Please provide a valid email")
-		Input(@change-value="inputFunction" name="companyTitle" placeholder="Company Title")
-		Input(@change-value="inputFunction" name="title" placeholder="Title")
-		Input(@change-value="inputFunction" name="message" textarea placeholder="Message")
-		Button(@click-event="sendForm()") Submit
+	.container
+		.description
+			h2 Contact
+			h3 <b>Ask us about</b>
+			.description__points
+				.description__points__item
+					img(src="~@assets/icon-person.svg")
+					p The quality of our talent network
+				.description__points__item
+					img(src="~@assets/icon-cog.svg")
+					p Usage &amp; implementation of our software
+				.description__points__item
+					img(src="~@assets/icon-chart.svg")
+					p How we help drive innovation
+		.form
+			Input(@change-value="inputFunction" name="name" placeholder="Name")
+			Input(
+				@change-value="inputFunction"
+				name="email"
+				placeholder="Email Address"
+				email-validation
+				error-message="Please provide a valid email")
+			Input(@change-value="inputFunction" name="companyTitle" placeholder="Company Title")
+			Input(@change-value="inputFunction" name="title" placeholder="Title")
+			Input(@change-value="inputFunction" name="message" textarea placeholder="Message")
+			Button(@click-event="sendForm()") Submit
 </template>
 
 <style lang="stylus" scoped>
 .contact
+	background-image url('~@assets/bg-pattern-contact-2.svg')
+	background-repeat no-repeat
+	background-position calc(100% + 100px) calc(100% + 100px)
 	padding 100px 20px
-.description
-	text-align center
+.container
 	max-width 320px
 	margin 0 auto
+.description
+	text-align center
 	&__points
 		&__item
 			display flex
@@ -44,10 +49,26 @@
 				margin-left 20px
 				margin-top 20px
 .form
-	max-width 320px
-	margin 0 auto
 	& > *
 		margin-top 25px
+@media screen and (min-width 768px)
+	.contact
+		background-image url('~@assets/bg-pattern-contact-2.svg'), url('~@assets/bg-pattern-about-2-contact-1.svg')
+		background-repeat no-repeat
+		background-position calc(100% + 100px) 100%, -100px 0
+	.container
+		max-width 600px
+@media screen and (min-width 768px)
+	.contact
+		background-position calc(100% + 100px) 100%, -100px 130px
+	.container
+		max-width 1100px
+		display grid
+		grid-template-columns 1fr 560px
+	.description
+		text-align start
+		& > *
+			margin-top 35px
 </style>
 
 <script lang="ts">
@@ -75,7 +96,6 @@ export default defineComponent({
 	methods: {
 		inputFunction(name: formInputTypes, value: string | null): void {
 			this.formData[name] = value;
-			console.log(name, value);
 		},
 		sendForm() {
 			for (const key in this.formData) {
