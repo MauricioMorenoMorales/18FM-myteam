@@ -11,6 +11,7 @@ module.exports = {
 	css: {
 		modules: true,
 	},
+	publicPath: process.env.NODE_ENV === 'production' ? '/18FM-myteam' : '/',
 	configureWebpack: {
 		resolve: {
 			alias: {
