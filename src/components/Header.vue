@@ -12,8 +12,8 @@ header
 			:class="{'absolute': plegableMenu}")
 	.plegable-menu--background(v-if="plegableMenu" @click="toggleMenu(false)")
 	transition(name="menu"): .plegable-menu(@click.stop="" v-if="plegableMenu")
-		a(href="/") Home
-		a(href="/") about
+		router-link(to="/" @click.prevent="plegableMenu = false") Home
+		router-link(to="/about" @click.prevent="plegableMenu = false") about
 		Button.button(@click.native="goToContactPage()") Contact Us
 </template>
 
