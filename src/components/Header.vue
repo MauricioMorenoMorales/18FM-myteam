@@ -57,7 +57,9 @@ header
 		width 255px
 		display flex
 		flex-direction column
-		padding 100px 40px
+		padding-top 15vh
+		padding-right 20px
+		padding-left 20px
 		background-image url('../assets/bg-pattern-about-1-mobile-nav-1.svg')
 		background-repeat no-repeat
 		background-position-y center
