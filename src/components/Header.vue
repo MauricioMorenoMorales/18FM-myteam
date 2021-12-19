@@ -51,13 +51,14 @@ header
 		background-color secondaryDesaturated
 		position fixed
 		z-index 100
-		right 0
+		top 0
 		bottom 0
+		right 0
 		height 100vh
 		width 255px
 		display flex
 		flex-direction column
-		padding-top 15vh
+		padding-top 100px
 		padding-right 20px
 		padding-left 20px
 		background-image url('../assets/bg-pattern-about-1-mobile-nav-1.svg')
